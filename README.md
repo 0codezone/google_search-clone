@@ -68,3 +68,42 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Project README
+
+This README file serves as documentation for the project, providing information on its setup, features, and ongoing development progress.
+
+### Setup Project
+
+To set up the project, follow these steps:
+
+1. Create a new React application using Create React App:
+
+   ```bash
+   npx create-react-app google_search_clone
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd google_search_clone
+   ```
+
+3. Setup and start using Tailwind CSS utility classes in your project's components and stylesheets:
+
+- For more detailed information and advanced usage of Tailwind CSS, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/installation).
+
+## Day 1
+
+- [x] Set up project
+- [x] Set up routes using React Router
+- [x] Designed navbar component
+- [x] Designed footer component
+
+### Design Components
+
+- Design your navbar with searchBar component and footer component according to project requirements.
+
+### Set up Routes
+
+- Set up routes using React-Router-dom. Refer [React Router DOM documentation](https://reactrouter.com/web/guides/quick-start).
