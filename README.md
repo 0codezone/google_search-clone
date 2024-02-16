@@ -1,43 +1,41 @@
-# Getting Started with Create React App
+# Project README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This README file serves as documentation for the project, providing information on its setup, features, and ongoing development progress.
 
-## Available Scripts
+## Getting Started with Create React App
 
-In the project directory, you can run:
+### Setup Project
 
-### `npm start`
+To set up the project, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1.  Clone the repository
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    ```bash
+    git clone https://github.com/0codezone/google_search-clone.git
 
-### `npm test`
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.  Navigate to the project directory:
 
-### `npm run build`
+    ```bash
+    cd <project_directory>
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3.  Setup and start using Tailwind CSS utility classes in your project's components and stylesheets:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- For more detailed information and advanced usage of Tailwind CSS, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/installation).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Install dependencies
 
-### `npm run eject`
+      ```bash
+      npm install
+      ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Start Server
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+      ```bash
+      npm start
+      ```
 
 ## Learn More
 
@@ -45,53 +43,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# Project README
-
-This README file serves as documentation for the project, providing information on its setup, features, and ongoing development progress.
-
-### Setup Project
-
-To set up the project, follow these steps:
-
-1. Create a new React application using Create React App:
-
-   ```bash
-   npx create-react-app google_search_clone
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd google_search_clone
-   ```
-
-3. Setup and start using Tailwind CSS utility classes in your project's components and stylesheets:
-
-- For more detailed information and advanced usage of Tailwind CSS, refer to the [Tailwind CSS documentation](https://tailwindcss.com/docs/installation).
+# Daily Work Update
 
 ## Day 1
 
@@ -107,3 +59,35 @@ To set up the project, follow these steps:
 ### Set up Routes
 
 - Set up routes using React-Router-dom. Refer [React Router DOM documentation](https://reactrouter.com/web/guides/quick-start).
+
+# Project Name
+
+## Day 2 Progress
+
+### Description
+
+On Day 2, additional components were created, and API integration was implemented.
+
+### Tasks Completed:
+
+1. **Created Separate Components for Search and NavLink:** Developed distinct components for the search bar and navigation links, enhancing modularity and reusability.
+
+2. **Created Context API Component:** Implemented a component using React's Context API to manage global state within the application.
+
+3. **Integrated Custom Search API (Google Developer API):** Successfully integrated a custom search API from Google Developer API, enabling users to perform searches within the application.
+
+4. **Integrated API Data with Frontend Result Component:** Integrated API data with a frontend result component to display search results seamlessly to users.
+
+### Documentation URLs:
+
+- [React Context API Documentation](https://reactjs.org/docs/context.html)
+- [Google Developer API Documentation](https://developers.google.com/custom-search/v1/overview)
+
+### Future Steps:
+
+- Implement pagination for search results.
+- Enhance error handling for API requests.
+- Optimize search functionality for better performance.
+- Implement user authentication and authorization functionalities.
+- Enhance UI/UX design for better user engagement.
+- Optimize API requests and responses for improved performance.

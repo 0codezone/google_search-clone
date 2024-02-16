@@ -1,41 +1,45 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink } from "./NavLink";
+
+import { useDebounce } from "use-debounce";
+import { useResultContext } from "../contexts/ResultContextProvider";
 
 export const Search = () => {
+  const { setSearchTerm } = useResultContext();
+  const [text, setText] = useState("Elon Musk");
+  const [debouncedValue] = useDebounce(text, 300);
+
+  useEffect(() => {
+    if (debouncedValue) {
+      setSearchTerm(debouncedValue);
+    }
+  }, [debouncedValue, setSearchTerm]);
+
   return (
     <div className="flex justify-center items-center flex-col w-screen">
       <div className="shadow-md rounded-lg border ">
-        <input type="text" className="rounded-l-lg p-2 outline-none" />
-        <button className="p-2  hover:bg-gray-200 dark:hover:bg-gray-700">
+        <input
+          value={text}
+          type="text"
+          className="rounded-l-lg p-2 outline-none"
+          placeholder=" 🔎 Search Google or Type url"
+          onChange={(e) => setText(e.target.value)}
+        />
+
+        {text !== "" && (
+          <button
+            onClick={() => setText("")}
+            className="p-2  hover:bg-gray-200 dark:hover:bg-gray-700"
+          >
+            X
+          </button>
+        )}
+        {/* <button className="p-2  hover:bg-gray-200 dark:hover:bg-gray-700"> 
           Search
-        </button>
+        </button> */}
       </div>
-      <div className="py-2 flex gap-4 ">
-        <Link
-          to={"/search"}
-          className="border rounded-xl p-1.5 hover:bg-gray-200 dark:hover:bg-gray-700 "
-        >
-          Search
-        </Link>
-        <Link
-          to={"/images"}
-          className="border rounded-xl p-1.5  hover:bg-gray-200 dark:hover:bg-gray-700 "
-        >
-          Images
-        </Link>
-        <Link
-          to={"/videos"}
-          className="border rounded-xl p-1.5  hover:bg-gray-200 dark:hover:bg-gray-700 "
-        >
-          Videos
-        </Link>
-        <Link
-          to={"/news"}
-          className="border rounded-xl p-1.5  hover:bg-gray-200 dark:hover:bg-gray-700 "
-        >
-          News
-        </Link>
-      </div>
+
+      <NavLink />
     </div>
   );
 };
