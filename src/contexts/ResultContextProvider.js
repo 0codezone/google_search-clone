@@ -8,8 +8,8 @@ export const ResultContextProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const fetchData = async (query) => {
-    const api_key = "AIzaSyDPYkqq9Vo-3nkyWufxj6S4do_uI7sXJXc";
-    const cx = "a2ddb44cd2d274a0f";
+    const api_key = "AIzaSyCJwRlPQhONFB7zHspLXBCQbq2dSRKJrbo";
+    const cx = "445b8157604314158";
     const url = `https://www.googleapis.com/customsearch/v1?key=${api_key}&cx=${cx}&q=${query}`;
 
     try {

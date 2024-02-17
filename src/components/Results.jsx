@@ -12,9 +12,9 @@ export const Results = () => {
   useEffect(() => {
     if (searchTerm !== "") {
       if (location.pathname === "/videos") {
-        fetchData(`/search?query=${searchTerm} videos`);
+        fetchData(`/search?q=${searchTerm} videos`);
       } else {
-        fetchData(`${location.pathname}/query=${searchTerm}&num=10`);
+        fetchData(`${location.pathname}/q=${searchTerm}&num=10`);
       }
     }
   }, [searchTerm, location.pathname]);
@@ -24,49 +24,59 @@ export const Results = () => {
   switch (location.pathname) {
     case "/search":
       return (
-        <div className="flex flex-wrap justify-between space-y-6 sm:px-56 px-10 py-10">
-          {searchResults.map(({ link, title }, index) => (
-            <div key={index} className="md:w-2/5 w-full">
-              <a href={link} target="_blank" rel="noreferrer">
-                <p className="text-sm">
-                  {link.length > 30 ? link.substring(0, 30) : link}
-                </p>
-                <p className="text-lg hover:underline dark:text-blue-300 text-blue-700">
-                  {title}
-                </p>
-              </a>
-            </div>
-          ))}
-        </div>
+        <>
+          {/* <div>
+          <p className="text-sm">
+            About {searchResults?.searchInformation.formattedTotalResults} results (
+            {searchResults?.searchInformation.formattedSearchTime} seconds)
+          </p>
+        </div> */}
+          <div className="space-y-6 sm:px-56 px-10 py-10">
+            {searchResults.map(({ link, title, snippet }, index) => (
+              <div key={index} className="md:w-2/3 w-full pb-5">
+                <a href={link} target="_blank" rel="noreferrer">
+                  <p className="text-xs">
+                    {link.length > 30 ? link.substring(0, 30) : link}
+                  </p>
+                  <p className="text-lg hover:underline dark:text-blue-300 text-blue-700">
+                    {title}
+                  </p>
+                  <p className="text-sm  ">{snippet}</p>
+                </a>
+              </div>
+            ))}
+          </div>
+        </>
       );
     case "/images":
       return (
-        <div className="flex flex-wrap justify-center items-center space-x-4">
-          {searchResults.map(({ title, link }, index) => (
-            <a
-              href={link}
-              target="_blank"
-              rel="noreferrer"
-              key={index}
-              className="sm:p-3 p5"
-            >
-              {/* <img src={link.src} alt={title}  loading="lazy"  /> */}
-              <p className="sm:w-36 w-36 break-words text-sm mt-2">{title}</p>
-            </a>
-          ))}
-        </div>
+        <div className="text-5xl"> Images </div>
+        // <div className="flex flex-wrap justify-center items-center space-x-4">
+        //   {searchResults.map(({ title, link }, index) => (
+        //     <a
+        //       href={link}
+        //       target="_blank"
+        //       rel="noreferrer"
+        //       key={index}
+        //       className="sm:p-3 p5"
+        //     >
+        //       {/* <img src={link.src} alt={title}  loading="lazy"  /> */}
+        //       <p className="sm:w-36 w-36 break-words text-sm mt-2">{title}</p>
+        //     </a>
+        //   ))}
+        // </div>
       );
 
     case "/news":
       return (
-        <div className="flex flex-wrap justify-between space-y-6 sm:px-56 px-10 py-10">
+        <div className="space-y-6 sm:px-56 px-10 py-10">
           {searchResults.map(({ link, title, snippet }, index) => (
-            <div key={index} className="md:w-2/5 w-full">
+            <div key={index} className="md:w-2/3 w-full">
               <a href={link} target="_blank" rel="noreferrer">
                 <p className="text-lg hover:underline dark:text-blue-300 text-blue-700">
                   {title}
                 </p>
-                <p className="text-sm">{snippet}</p>
+                <p className="text-sm md:w-4/5">{snippet}</p>
               </a>
             </div>
           ))}
@@ -74,13 +84,15 @@ export const Results = () => {
       );
     case "/videos":
       return (
-        <div className="flex flex-wrap justify-center items-center space-x-4">
-          {searchResults.map(({ video }, index) => (
-            <div key={index} className="p-2">
-              <ReactPlayer url={video} controls width="355px" height="200px" />
-            </div>
-          ))}
-        </div>
+        <div className="text-5xl"> Videos </div>
+
+        // <div className="flex flex-wrap justify-center items-center space-x-4">
+        //   {searchResults.map(({ video }, index) => (
+        //     <div key={index} className="p-2">
+        //       <ReactPlayer url={video} controls width="355px" height="200px" />
+        //     </div>
+        //   ))}
+        // </div>
       );
 
     default:

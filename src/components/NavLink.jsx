@@ -5,12 +5,6 @@ export const NavLink = () => {
   return (
     <div className="py-2 flex gap-4 ">
       <Link
-        to={"/search"}
-        className="border rounded-xl p-1.5 hover:bg-gray-200 dark:hover:bg-gray-700 "
-      >
-        Search
-      </Link>
-      <Link
         to={"/images"}
         className="border rounded-xl p-1.5  hover:bg-gray-200 dark:hover:bg-gray-700 "
       >

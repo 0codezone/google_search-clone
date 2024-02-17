@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "./NavLink";
 
 import { useDebounce } from "use-debounce";
@@ -6,39 +6,45 @@ import { useResultContext } from "../contexts/ResultContextProvider";
 
 export const Search = () => {
   const { setSearchTerm } = useResultContext();
-  const [text, setText] = useState("Elon Musk");
+  const [text, setText] = useState("");
   const [debouncedValue] = useDebounce(text, 300);
 
-  useEffect(() => {
-    if (debouncedValue) {
+  // useEffect(() => {
+  //   if (debouncedValue) {
+  //     setSearchTerm(debouncedValue);
+  //   }
+  // }, [debouncedValue, setSearchTerm]);
+
+  const handleInputChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
       setSearchTerm(debouncedValue);
     }
-  }, [debouncedValue, setSearchTerm]);
+  };
 
   return (
-    <div className="flex justify-center items-center flex-col w-screen">
-      <div className="shadow-md rounded-lg border ">
+    <div className="flex  flex-col ">
+      <div className="relative">
         <input
           value={text}
           type="text"
-          className="rounded-l-lg p-2 outline-none"
-          placeholder=" 🔎 Search Google or Type url"
-          onChange={(e) => setText(e.target.value)}
+          className="py-2 px-4 block w-80 sm:w-96 rounded-lg shadow-md border border-gray-300 placeholder-gray-500 focus:outline-none focus:border-blue-400"
+          placeholder="🔎 Search Google or Type URL"
+          onChange={handleInputChange}
+          onKeyPress={handleKeyPress}
         />
-
         {text !== "" && (
           <button
             onClick={() => setText("")}
-            className="p-2  hover:bg-gray-200 dark:hover:bg-gray-700"
+            className="absolute inset-y-0 right-0 flex items-center px-4 text-gray-600 dark:text-gray-300"
           >
             X
           </button>
         )}
-        {/* <button className="p-2  hover:bg-gray-200 dark:hover:bg-gray-700"> 
-          Search
-        </button> */}
       </div>
-
       <NavLink />
     </div>
   );
