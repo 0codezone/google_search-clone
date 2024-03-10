@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import { useResultContext } from "../contexts/ResultContextProvider";
-import ReactPlayer from "react-player";
 
 export const Results = () => {
   const { fetchData, searchResults, loading, searchTerm } = useResultContext();
@@ -17,7 +16,7 @@ export const Results = () => {
         fetchData(`${location.pathname}/q=${searchTerm}&num=10`);
       }
     }
-  }, [searchTerm, location.pathname]);
+  }, [searchTerm, location.pathname, fetchData]);
 
   if (loading) return <div className="h-screen">Loading...</div>;
 
